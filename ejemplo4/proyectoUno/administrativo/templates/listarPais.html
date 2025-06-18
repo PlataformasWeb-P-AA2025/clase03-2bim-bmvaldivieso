@@ -1,0 +1,8 @@
+<h2>Listado de Paises</h2>
+<ul>
+    {% for p in paises %}
+        <li>{{ p }}</li>
+    {% endfor %}
+</ul>
+
+[<a href="{% url 'index_pais' %}">inicio</a>]

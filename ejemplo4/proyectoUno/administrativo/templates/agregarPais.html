@@ -1,0 +1,9 @@
+<h2>Agregar Pais</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <button type="submit">Agregar</button>
+</form>
+
+[<a href="{% url 'index_pais' %}">inicio</a>]
+
