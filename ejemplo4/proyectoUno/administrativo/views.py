@@ -92,12 +92,12 @@ def eliminar_estudiante(request, id):
 
 # pais
 def index_pais(request):
-    paises = Pais.objects.all()
-    return render(request, 'indexPais.html', {'paises': paises})    
+    return render(request, 'indexPais.html')    
 
 def listar_paises(request):
     paises = Pais.objects.all()
-    return render(request, 'listadoPaises.html', {'paises': paises})
+    informacion_template = {'paises': paises, 'numero_paises': len(paises)}
+    return render(request, 'listadoPaises.html', informacion_template)
 
 def agregar_pais(request):
     if request.method=='POST':

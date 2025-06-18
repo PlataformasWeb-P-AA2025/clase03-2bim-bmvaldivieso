@@ -1,14 +1,6 @@
 <h2>Index de Paises</h2>
 
-<ul>
-    {% for e in paises %}
-   
-     <li>
-       {{e}} - [<a href="{% url 'obtener_pais' e.id %}">ver</a>] - 
-     </li>
-   
-   {% endfor %} 
-   </ul>
-   
-   <br />
+<br />
 [<a href="{% url 'agregar_pais' %}">agregar pais</a>]
+<br />
+[<a href="{% url 'listar_paises' %}">listar paises</a>]

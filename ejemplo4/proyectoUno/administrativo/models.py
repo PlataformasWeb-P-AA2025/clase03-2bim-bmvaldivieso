@@ -12,7 +12,7 @@ class Pais(models.Model):
     numero_habitantes = models.IntegerField()
 
     def __str__(self):
-        return "%s %s %s %s %s" % (self.nombre,
+        return "%s %s %s %s" % (self.nombre,
                 self.capital,
                 self.numero_provincias,
                 self.numero_habitantes)
