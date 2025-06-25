@@ -16,9 +16,13 @@ def index(request):
     matriculas = Matricula.objects.all()
 
     titulo = "Listado de matriculas"
-    informacion_template = {'matriculas': matriculas,
-    'numero_matriculas': len(matriculas), 'mititulo': titulo}
-    return render(request, 'index.html', informacion_template)
+    informacion_template = {'matriculas': matriculas,'numero_matriculas': len(matriculas), 'mititulo': titulo}
+
+    #Estudiantes
+    estudiantes = Estudiante.objects.all()
+    informacion_template_estudiantes = {'estudiantes': estudiantes,'numero_estudiantes': len(estudiantes), 'mititulo': titulo}
+
+    return render(request, 'index.html', informacion_template, informacion_template_estudiantes)
 
 
 def detalle_matricula(request, id):

@@ -29,5 +29,32 @@
     </td>
   </tr>
   {% endfor %}
+</table>
 
+<hr>
+<h3>Lista de estudiantes</h3>
+<table border="1px">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Tipo</th>
+    <th>Edad</th>
+    <th>Matrículas</th>
+  </tr>
+  {% for estudiante in estudiantes %}
+  <tr>
+    <td>{{ estudiante.nombre }}</td>
+    <td>{{ estudiante.apellido }}</td>
+    <td>{{ estudiante.get_tipo_estudiante_display }}</td>
+    <td>{{ estudiante.edad }}</td>
+    <td>
+      <ul>
+        {% for matricula in estudiante.lasmatriculas.all %}
+        <li>{{ matricula.modulo.nombre }} — ${{ matricula.modulo.costo }}</li>
+        {% endfor %}
+      </ul>
+      <strong>Total:</strong> ${{ estudiante.total_costos|floatformat:2 }}
+    </td>
+  </tr>
+  {% endfor %}
 </table>
